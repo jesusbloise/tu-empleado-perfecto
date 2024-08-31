@@ -1,0 +1,17 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    color: #fff;
+    font-size: 1rem;
+    font-style: italic;
+    z-index: 1000; /* Asegura que el footer esté por encima de otros elementos */
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
