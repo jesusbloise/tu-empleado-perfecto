@@ -1,5 +1,3 @@
-# api/views.py
-
 from rest_framework import viewsets
 from .models import Empresa, Empleado
 from .serializers import EmpresaSerializer, EmpleadoSerializer

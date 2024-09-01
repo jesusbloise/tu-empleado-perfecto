@@ -1,213 +1,195 @@
-/* Empresas.css */
+/* Contenedor principal */
+.empresas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  background-image: url('/public/empresas.jpg'); /* Reemplaza con la ruta a tu imagen */
+  background-size: cover;
+  background-position: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .form-container {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .form-control {
-    width: 100%;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  
-  .list-group {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .list-group-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  }
-  
-  .btn-group {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .btn {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .btn-secondary {
-    background-color: #6c757d;
-    color: #fff;
-  }
-  
-  .btn-danger {
-    background-color: #dc3545;
-    color: #fff;
-  }
-  
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal-content {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .modal-header h2 {
-    margin: 0;
-  }
-  
-  .modal-footer {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-  }
-  
+.empresas-content {
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 1200px; /* Limitamos el ancho máximo */
+  width: 100%;
+  margin: auto;
+}
 
-/* src/components/MisEmpresas.css
+/* Título principal */
+.empresas-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+/* Tarjeta de formulario y listado de empresas */
+.empresas-card,
+.empresas-list-card {
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Grupos de formulario */
+.empresas-form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.empresas-form-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #e0e0e0;
+}
+
+.empresas-form-group input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+}
+
+/* Botones */
+.empresas-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 10px 5px;
+}
+
+.empresas-button:hover {
+  background-color: #0056b3;
+}
+
+.empresas-button-danger {
+  background-color: #dc3545;
+}
+
+.empresas-button-danger:hover {
+  background-color: #c82333;
+}
+
+.empresas-button-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.empresas-button-warning:hover {
+  background-color: #e0a800;
+  color: #212529;
+}
+
+.empresas-button-secondary {
+  background-color: #6c757d;
+}
+
+.empresas-button-secondary:hover {
+  background-color: #5a6268;
+}
+
+.empresas-list-item {
+  list-style: none;
+  margin: 15px 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que los botones se ajusten en pantallas más pequeñas */
+}
+
+.empresas-back-home {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.empresas-back-home:hover {
+  background-color: #218838;
+}
+
+/* Modal */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 500px;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .empresas-list-item {
+      flex-direction: column;
+      align-items: flex-start;
   }
-  
-  h1, h2 {
-    font-family: Arial, sans-serif;
-    color: #333;
-    margin-bottom: 20px;
+
+  .empresas-button {
+      width: 100%;
+      margin: 5px 0;
   }
-  
-  .form-group {
-    margin-bottom: 15px;
-    text-align: left;
+}
+
+@media (max-width: 576px) {
+  .empresas-content {
+      padding: 20px;
   }
-  
-  .form-label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
-    font-family: Arial, sans-serif;
+
+  .empresas-title {
+      font-size: 2rem;
   }
-  
-  .form-control {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: Arial, sans-serif;
+
+  .empresas-form-group input {
+      font-size: 0.9rem;
   }
-  
-  .btn {
-    padding: 10px 15px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background-color: #f0f0f0;
-    cursor: pointer;
-    margin-right: 10px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .btn-primary {
-    background-color: #007bff;
-    color: white;
-    border: none;
-  }
-  
-  .btn-danger {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-  }
-  
-  .btn-secondary {
-    background-color: #6c757d;
-    color: white;
-    border: none;
-  }
-  
-  .btn-group {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-  }
-  
-  .list-group {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .list-group-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #f9f9f9;
-  }
-  
-  .modal-content {
-    border-radius: 4px;
-  }
-  
-  .modal-header {
-    border-bottom: 1px solid #dee2e6;
-    background-color: #f8f9fa;
-  }
-  
-  .modal-footer {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .modal-footer .btn {
-    margin-left: 10px;
-  }
-   */
+}

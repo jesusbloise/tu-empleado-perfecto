@@ -1,6 +1,7 @@
 // src/components/MisEmpleados.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate para la redirección
 import './Empleados.css'; // Importa el archivo CSS para los estilos
 
 const Empleados = () => {
@@ -10,6 +11,7 @@ const Empleados = () => {
   const [nuevoEmpleado, setNuevoEmpleado] = useState({ nombre_completo: '', rut: '', email: '' });
   const [selectedEmpleados, setSelectedEmpleados] = useState(new Set());
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate(); // Hook para redirección
 
   useEffect(() => {
     const fetchEmpresas = async () => {
@@ -90,68 +92,93 @@ const Empleados = () => {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div className="container">
-      <h1>Selecciona una empresa</h1>
-      <select className="select-empresa" onChange={(e) => setSelectedEmpresa(e.target.value)} value={selectedEmpresa}>
-        <option value="">Selecciona una empresa</option>
-        {empresas.map((empresa) => (
-          <option key={empresa.id} value={empresa.id}>{empresa.nombre}</option>
-        ))}
-      </select>
-
-      {selectedEmpresa && (
-        <div className="card">
-          <h2>Agregar Nuevo Empleado</h2>
-          <form onSubmit={handleSubmit} className="form">
-            <input
-              type="text"
-              placeholder="Nombre Completo"
-              value={nuevoEmpleado.nombre_completo}
-              onChange={(e) => setNuevoEmpleado({ ...nuevoEmpleado, nombre_completo: e.target.value })}
-              required
-            />
-            <input
-              type="text"
-              placeholder="RUT"
-              value={nuevoEmpleado.rut}
-              onChange={(e) => setNuevoEmpleado({ ...nuevoEmpleado, rut: e.target.value })}
-              required
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              value={nuevoEmpleado.email}
-              onChange={(e) => setNuevoEmpleado({ ...nuevoEmpleado, email: e.target.value })}
-              required
-            />
-            <button type="submit">Agregar Empleado</button>
-          </form>
-
-          <h2>Empleados de la empresa</h2>
-          <ul className="empleados-list">
-            {empleados.map((empleado) => (
-              <li key={empleado.id} className="empleado-item">
-                <input
-                  type="checkbox"
-                  checked={selectedEmpleados.has(empleado.id)}
-                  onChange={() => handleSelectEmpleado(empleado.id)}
-                />
-                <div>
-                  <h3>{empleado.nombre_completo}</h3>
-                  <p>RUT: {empleado.rut}</p>
-                  <p>Email: {empleado.email}</p>
-                </div>
-              </li>
+    <div className="empleados-container">
+      <div className="empleados-content">
+        <h1 className="empleados-title">Selecciona una Empresa</h1>
+        
+        <div className="empleados-card">
+          <select className="empleados-select" onChange={(e) => setSelectedEmpresa(e.target.value)} value={selectedEmpresa}>
+            <option value="">Selecciona una empresa</option>
+            {empresas.map((empresa) => (
+              <option key={empresa.id} value={empresa.id}>{empresa.nombre}</option>
             ))}
-          </ul>
+          </select>
 
-          {selectedEmpleados.size > 0 && (
-            <button onClick={handleDeleteSelected} className="delete-button">
-              Eliminar Seleccionados
-            </button>
+          {selectedEmpresa && (
+            <div className="empleados-form-container">
+              <h2>{nuevoEmpleado.id ? 'Editar Empleado' : 'Agregar Nuevo Empleado'}</h2>
+              <form onSubmit={handleSubmit} className="empleados-form">
+                <div className="empleados-form-group">
+                  <label htmlFor="nombre_completo">Nombre Completo</label>
+                  <input
+                    type="text"
+                    id="nombre_completo"
+                    placeholder="Nombre Completo"
+                    value={nuevoEmpleado.nombre_completo}
+                    onChange={(e) => setNuevoEmpleado({ ...nuevoEmpleado, nombre_completo: e.target.value })}
+                    required
+                  />
+                </div>
+                <div className="empleados-form-group">
+                  <label htmlFor="rut">RUT</label>
+                  <input
+                    type="text"
+                    id="rut"
+                    placeholder="RUT"
+                    value={nuevoEmpleado.rut}
+                    onChange={(e) => setNuevoEmpleado({ ...nuevoEmpleado, rut: e.target.value })}
+                    required
+                  />
+                </div>
+                <div className="empleados-form-group">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Email"
+                    value={nuevoEmpleado.email}
+                    onChange={(e) => setNuevoEmpleado({ ...nuevoEmpleado, email: e.target.value })}
+                    required
+                  />
+                </div>
+                <button type="submit" className="empleados-button">
+                  {nuevoEmpleado.id ? 'Guardar Cambios' : 'Agregar Empleado'}
+                </button>
+              </form>
+
+              <h2>Empleados de la empresa</h2>
+              <ul className="empleados-list">
+                {empleados.map((empleado) => (
+                  <li key={empleado.id} className="empleado-item">
+                    <input
+                      type="checkbox"
+                      checked={selectedEmpleados.has(empleado.id)}
+                      onChange={() => handleSelectEmpleado(empleado.id)}
+                    />
+                    <div>
+                      <h3>{empleado.nombre_completo}</h3>
+                      <p><strong>RUT:</strong> {empleado.rut}</p>
+                      <p><strong>Email:</strong> {empleado.email}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+              {selectedEmpleados.size > 0 && (
+                <button onClick={handleDeleteSelected} className="empleados-button-danger">
+                  Eliminar Seleccionados
+                </button>
+              )}
+            </div>
           )}
+             <button 
+          className="empleados-back-home" 
+          onClick={() => navigate('/')} // Redirige a Home
+        >
+          Regresar a Home
+        </button>
         </div>
-      )}
+      </div>
     </div>
   );
 };
