@@ -54,7 +54,7 @@ const Empresas = () => {
   const handleEditar = (empresa) => {
     setNuevaEmpresa(empresa);
     setEmpresaSeleccionada(empresa);
-    // Desplazar al principio de la página
+   
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

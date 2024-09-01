@@ -4,11 +4,11 @@
     width: 100%;
     text-align: center;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    background-color: rgba(0, 0, 0, 0.5); 
     color: #fff;
     font-size: 1rem;
     font-style: italic;
-    z-index: 1000; /* Asegura que el footer esté por encima de otros elementos */
+    z-index: 1000; 
   }
   
   .footer p {

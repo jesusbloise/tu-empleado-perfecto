@@ -1,16 +1,15 @@
-/* Imagen de fondo */
+
 .home-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('/public/oficina.jpg'); /* Reemplaza con la ruta a tu imagen */
+    background-image: url('/public/oficina.jpg'); 
     background-size: cover;
     background-position: center;
     animation: fadeIn 1.5s ease-in-out;
   }
   
-  /* Animación de entrada */
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -23,7 +22,7 @@
   .home-content {
     text-align: center;
     color: #fff;
-    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para la card */
+    background: rgba(0, 0, 0, 0.6); 
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);

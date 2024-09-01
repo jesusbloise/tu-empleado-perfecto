@@ -1,19 +1,17 @@
-/* src/components/Empleados.css */
 
-/* Contenedor principal */
 .empleados-container {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
   min-height: 100vh;
-  background-image: url('/public/empresas.jpg'); /* Reemplaza con la ruta a tu imagen */
+  background-image: url('/public/empresas.jpg'); 
   background-size: cover;
   background-position: center;
   animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Contenido principal */
+
 .empleados-content {
   text-align: center;
   color: #fff;
@@ -21,12 +19,12 @@
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  max-width: 1200px; /* Limitamos el ancho máximo */
+  max-width: 1200px; 
   width: 100%;
   margin: auto;
 }
 
-/* Título principal */
+
 .empleados-title {
   font-size: 2.5rem;
   margin-bottom: 20px;
@@ -34,7 +32,6 @@
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Tarjeta de formulario y listado de empleados */
 .empleados-card {
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
@@ -43,7 +40,6 @@
   margin-bottom: 20px;
 }
 
-/* Selección */
 .empleados-select {
   margin-bottom: 20px;
   padding: 10px;
@@ -53,7 +49,6 @@
   font-size: 1rem;
 }
 
-/* Formulario */
 .empleados-form-container {
   margin-top: 20px;
 }
@@ -79,7 +74,6 @@
   font-size: 1rem;
 }
 
-/* Botones */
 .empleados-button {
   padding: 10px 20px;
   background-color: #007bff;
@@ -121,14 +115,13 @@
   margin-bottom: 15px;
   display: flex;
   align-items: center;
-  flex-wrap: wrap; /* Permite que los botones se ajusten en pantallas más pequeñas */
+  flex-wrap: wrap; 
 }
 
 .empleado-item div {
   margin-left: 10px;
 }
 
-/* Botón de volver a casa */
 .empleados-back-home {
   display: inline-block;
   margin-top: 30px;
@@ -144,7 +137,6 @@
   background-color: #218838;
 }
 
-/* Modal */
 .modal-container {
   position: fixed;
   top: 0;
@@ -176,7 +168,6 @@
   justify-content: space-between;
 }
 
-/* Estilos responsivos */
 @media (max-width: 768px) {
   .empleado-item {
       flex-direction: column;

@@ -1,8 +1,8 @@
-// src/components/MisEmpleados.jsx
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate para la redirección
-import './Empleados.css'; // Importa el archivo CSS para los estilos
+import { useNavigate } from 'react-router-dom'; 
+import './Empleados.css'; 
 
 const Empleados = () => {
   const [empresas, setEmpresas] = useState([]);
@@ -11,7 +11,7 @@ const Empleados = () => {
   const [nuevoEmpleado, setNuevoEmpleado] = useState({ nombre_completo: '', rut: '', email: '' });
   const [selectedEmpleados, setSelectedEmpleados] = useState(new Set());
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate(); // Hook para redirección
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchEmpresas = async () => {
@@ -54,7 +54,6 @@ const Empleados = () => {
       });
       setNuevoEmpleado({ nombre_completo: '', rut: '', email: '' });
 
-      // Refrescar la lista de empleados para la empresa seleccionada
       const response = await axios.get(`http://127.0.0.1:8000/api/empleados/?empresa=${selectedEmpresa}`);
       setEmpleados(response.data);
     } catch (err) {
@@ -80,7 +79,6 @@ const Empleados = () => {
         axios.delete(`http://127.0.0.1:8000/api/empleados/${id}/`)
       ));
 
-      // Refrescar la lista de empleados para la empresa seleccionada
       const response = await axios.get(`http://127.0.0.1:8000/api/empleados/?empresa=${selectedEmpresa}`);
       setEmpleados(response.data);
       setSelectedEmpleados(new Set());
@@ -173,7 +171,7 @@ const Empleados = () => {
           )}
              <button 
           className="empleados-back-home" 
-          onClick={() => navigate('/')} // Redirige a Home
+          onClick={() => navigate('/')} 
         >
           Regresar a Home
         </button>
